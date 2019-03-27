@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import statistics
+import math
 app = Flask(__name__)
 
 # Make the WSGI interface available at the top level so wfastcgi can get it.
@@ -15,12 +15,7 @@ class Image:
             self.rating.append(rating)
 
         def rating_average(self):
-            result = 0
-            sum = 0
-            for rating in self.rating:
-                sum += rating
-            result = sum / len(self.rating)
-            return result
+            return round(math.fsum(self.rating)/len(self.rating),2)
 
 images = []
 import os
