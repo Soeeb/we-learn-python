@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <img src="static/images/{{request.args.get("imageName")}}" />\
+    <br />
+    <form method="POST">
+        <input type="radio" name="rating" value="1"> 1<br>
+        <input type="radio" name="rating" value="2"> 2<br>
+        <input type="radio" name="rating" value="3"> 3<br />
+        <input type="radio" name="rating" value="4"> 4<br />
+        <input type="radio" name="rating" value="5"> 5<br />
+        <input type="submit" name="submit" />
+    </form>
+    {{rating}}
+    <a href="/">
+        <input type="button" value="home" />
+    </a>
+</body>
+</html>
