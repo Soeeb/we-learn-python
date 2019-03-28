@@ -20,10 +20,9 @@ class Image:
             return round(math.fsum(self.rating)/len(self.rating),2)
 
 
-
+images = []
 @app.route('/')
 def main():
-    images = []
     for filename in os.listdir(path):
         images.append(Image(filename, "Savage Chickens, Doug Savage"))
     return render_template("index.html", images = images)
