@@ -1,14 +1,19 @@
-﻿{% extends "layout.html" %}
+{% extends "layout.html" %}
 
 {% block content %}
-	{% for image in images %}
-<div class="card" style="width: 24rem;">
-        <img src="{{url_for('static', filename = 'images/' + image.filename)}}" />
-    <div class="card-body">
-        <h5 class="card-title">{{image.filename}}</h5>
-        <a href="rate?imageName={{ image.filename}}" class="btn btn-primary">Rate This Image!</a>
-    </div>
-</div>
-	{% endfor %}
+<div class="row">
+    {% for image in images %}
+    <div class="col">
 
+        <div class="card" style="width: 450px;">
+            <img src="{{url_for('static', filename = 'images/' + image.filename)}}" />
+            <div class="card-body">
+                <h5 class="card-title">{{image.filename}}</h5>
+                <a href="rate?imageName={{ image.filename}}" class="btn btn-primary">Rate This Image!</a>
+            </div>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
 {% endblock %}
